@@ -1,0 +1,44 @@
+#container {
+	width: 800px;
+	margin: 0 auto;
+}
+
+svg {
+	border: 1px solid #bbb;
+}
+
+.circle {
+	stroke: #fff;
+	stroke-width: 1.5px;
+	fill: #666;
+}
+
+.link {
+	stroke: #999;
+}
+
+.nodetext {
+	pointer-events: none;
+	font-family: sans-serif;
+	font-size: 11px;
+}
+
+.linktext, .settinginfo {
+	pointer-events: none;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.linktext .key {
+	font-weight: normal;
+}
+
+.infopanel {
+	font-family: sans-serif;
+	font-size: 12px;
+}
+
+.infopanel .heading, .heading1, .heading2, .infopanel .rightcol {
+	font-weight: bold;
+}

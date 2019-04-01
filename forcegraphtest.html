@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Force directed network graph</title>
+		<script type="text/javascript" src="d3.js"></script>
+		<script type="text/javascript" src="d3.layout.js"></script>
+		<script type="text/javascript" src="d3.geom.js"></script>
+		<script type="text/javascript" src="d3.behavior.js"></script>
+
+		<script type="text/javascript" src="forcegraph.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="forcegraphstyle.css" />
+	</head>
+
+	<body>
+		<div id="container">
+			<h1>Force Directed Network Graph</h1>
+
+			<select onchange="drawGraph(this.value)">
+				<option value="graph1">People linked by publications</option>
+				<option value="graph2">People linked by grants</option>
+				<option value="graph3">Publications linked by grants</option>
+			</select>
+
+			<div id="chart1">
+				<script>
+					forceGraph("people", "publications", "centre");
+
+					function drawGraph(choice) {
+						if (choice === "graph1") forceGraph("people", "publications", "centre");
+						if (choice === "graph2") forceGraph("people", "grants", "centre");
+						if (choice === "graph3") forceGraph("publications", "grants", "type");
+					}
+				</script>
+		</div>
+	</body>
+</html>
