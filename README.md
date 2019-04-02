@@ -10,7 +10,7 @@ The data is loaded on runtime from a single JSON file, which specifies which
 papers and grants are associated with each staff member, in the following format:
 ~~~~
 {
-	"people": {
+  "people": {
     "41": {
       "name": "Jessie Kennedy",
       "centre": "CISS",
