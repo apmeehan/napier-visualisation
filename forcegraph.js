@@ -29,7 +29,7 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 
 	var	widthScales = [
 			{name: "Constant", scale: function () { return 1; }},
-			{name: "Scaled", scale: function (d) { return Math.pow(d.cnt, 0.6); }},
+			{name: "Scaled", scale: function (d) { return Math.pow(d.cnt, 0.7); }},
 			{name: "Proportional", scale: function (d) { return d.cnt; }}
 		],
 		currentWidthScaleIndex = 1;
@@ -38,15 +38,18 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 			{name: "Constant", scale: function () { return 1; }},
 			{name: "Scaled", scale: function (d) { return d.cnt / 60; }},
 		],
-		currentForceScaleIndex = 0;
+		currentForceScaleIndex = 1;
 
+	var charges = [-200, -80],
+		linkDistances = [40, 0];
 
 
 	var force = d3.layout.force()
 		.size([w, h])
 		.gravity(0.1)
-		.charge(-200)
-		.linkDistance(40);
+		.charge(charges[currentForceScaleIndex])
+		.linkDistance(linkDistances[currentForceScaleIndex])
+		.linkStrength(forceScales[currentForceScaleIndex].scale)
 
 	var chart = d3.select("#chart1");
 
@@ -760,9 +763,6 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 
 	function cycleForceScale() {
 		currentForceScaleIndex = (currentForceScaleIndex + 1) % 2;
-
-		var charges = [-200, -80],
-			linkDistances = [40, 0];
 
 		force
 			.stop()
