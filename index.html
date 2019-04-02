@@ -33,6 +33,49 @@
 						if (choice == "graph2") forceGraph("people", "grants", "centre");
 					}
 				</script>
+			</div>
+
+			<p>
+				Each node is a member of staff who has authored at least one paper, and the
+				links represent the number of papers co-authored by each staff member.
+			</p>
+
+			<p>
+				The sizes of the nodes vary with the total number of papers each author
+				has written, and the widths of the links vary with the number of papers
+				co-authored by each author-pair.
+			</p>
+
+			<p>
+				The colours correspond to the different research groups each author belongs to.
+			</p>
+
+			<p>
+				The data is loaded on runtime from a single JSON file, which specifies only
+				which papers each staff member is credited with, in the following format:
+				<pre>
+					<code>
+{
+  "people": {
+    "41": {
+      "name": "Jessie Kennedy",
+      "centre": "CISS",
+      "publications": [
+        "286105",
+        "286263",
+        "286267",
+        "286277"
+      ],
+      "grants": [
+        "13355681",
+        "13355659",
+        "13364427"
+      ]
+    },
+					</code>
+				</pre>
+				And the tool does the rest.
+			</p>
 		</div>
 	</body>
 </html>
