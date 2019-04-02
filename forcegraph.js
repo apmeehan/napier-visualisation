@@ -84,7 +84,7 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 			.style("opacity", 1);
 
 
-	d3.json("rawdata2.json", function (json) {
+	d3.json("data.json", function (json) {
 		data = json;
 
 		for (e in data[nodeDataKey])
