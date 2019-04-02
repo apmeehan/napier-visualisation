@@ -29,7 +29,7 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 
 	var	widthScales = [
 			{name: "Constant", scale: function () { return 1; }},
-			{name: "Scaled", scale: function (d) { return Math.pow(d.cnt, 0.7); }},
+			{name: "Scaled", scale: function (d) { return Math.pow(d.cnt, 0.8); }},
 			{name: "Proportional", scale: function (d) { return d.cnt; }}
 		],
 		currentWidthScaleIndex = 1;
