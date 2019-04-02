@@ -15,22 +15,22 @@
 	<body>
 		<div id="container">
 			<h1>Napier University Visualisation</h1>
-			<h2>Connections between Napier University research staff, by paper co-authorships</h2>
+			<h3>Connections between Napier University research staff, by paper co-authorships</h3>
 
-			<select onchange="drawGraph(this.value)">
-				<option value="graph1">People linked by publications</option>
-				<option value="graph2">People linked by grants</option>
-				<option value="graph3">Publications linked by grants</option>
-			</select>
+			<p>
+				<select onchange="drawGraph(this.value)">
+					<option value="graph1">People linked by publications</option>
+					<option value="graph2">People linked by grants</option>
+				</select>
+			</p>
 
 			<div id="chart1">
 				<script>
 					forceGraph("people", "publications", "centre");
 
 					function drawGraph(choice) {
-						if (choice === "graph1") forceGraph("people", "publications", "centre");
-						if (choice === "graph2") forceGraph("people", "grants", "centre");
-						if (choice === "graph3") forceGraph("publications", "grants", "type");
+						if (choice == "graph1") forceGraph("people", "publications", "centre");
+						if (choice == "graph2") forceGraph("people", "grants", "centre");
 					}
 				</script>
 		</div>
