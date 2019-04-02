@@ -4,6 +4,8 @@ Connections between Napier University research staff, by paper co-authorships.
 
 Written in JavaScript, using the D3.js visualisation library.
 
+[Viewable here.](https://apmeehan.github.io/napier-visualisation/)
+
 ## Background
 
 The aim of any information visualisation tool is to illuminate and inform, by presenting a mass of data in such a way as it can be quickly and intuitively processed by a person without too much cognitive effort. It will also allow one to gain insight, by interactive exploration, into trends in the data, or to uncover previously hidden patterns.
