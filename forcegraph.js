@@ -5,11 +5,13 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 		force,
 		node,
 		link,
-		w = 620,
+		w = 310,
 		h = 480,
 		fill = d3.scale.category10(),
 		currentZoom = 1,
 		currentPan = [0, 0];
+
+	var parentDiv = document.getElementById("chart1");
 
 	// CHEAT - need to generalise later by deriving this
 	var nodeKeys = {
