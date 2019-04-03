@@ -68,13 +68,14 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 		.on("click", cycleForceScale);
 
 	// create actual svg visualisation
-	var vis = chart.append("svg:svg")
+	var svg = chart.append("svg:svg")
 			.attr("width", w)
 			.attr("height", h)
 			.call(d3.behavior.zoom().on("zoom", redrawIt))
-		.append("svg:g");
 
-	vis.append("svg:rect")
+	var vis = svg.append("svg:g");
+
+	svg.append("svg:rect")
 			.attr("width", w)
 			.attr("height", h)
 			.attr("fill", "white");
