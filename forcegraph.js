@@ -72,11 +72,11 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 			.attr("width", w)
 			.attr("height", h)
 			.call(d3.behavior.zoom().on("zoom", redrawIt))
+		.append("svg:g")
 		.append("svg:rect")
 			.attr("width", w)
 			.attr("height", h)
-			.attr("fill", "white")
-		.append("svg:g");
+			.attr("fill", "white");
 
 	// fade in vis
 	// note: very small values, when stringified, may be converted to scientific notation and cause
