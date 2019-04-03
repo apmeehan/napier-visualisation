@@ -5,7 +5,7 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 		force,
 		node,
 		link,
-		//w = 620,
+		w = document.getElementById("chart1").clientWidth;
 		h = 480,
 		fill = d3.scale.category10(),
 		currentZoom = 1,
@@ -53,7 +53,6 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 		.linkStrength(forceScales[currentForceScaleIndex].scale)
 
 	var chart = d3.select("#chart1");
-	var w = chart.clientWidth;
 
 	// remove previous chart
 	chart.selectAll("*").remove();
