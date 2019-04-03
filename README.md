@@ -1,6 +1,6 @@
 # Napier University Visualisation
 
-Connections between Napier University research staff, by paper co-authorships.
+This visualisation shows connections between research staff, based on papers they have co-written.
 
 Written in JavaScript, using the D3.js visualisation library.
 
