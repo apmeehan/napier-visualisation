@@ -72,8 +72,9 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 			.attr("width", w)
 			.attr("height", h)
 			.call(d3.behavior.zoom().on("zoom", redrawIt))
-		.append("svg:g")
-		.append("svg:rect")
+		.append("svg:g");
+
+	vis.append("svg:rect")
 			.attr("width", w)
 			.attr("height", h)
 			.attr("fill", "white");
