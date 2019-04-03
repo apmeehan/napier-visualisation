@@ -2,82 +2,79 @@
 layout: default
 ---
 
-		<title>Force directed network graph</title>
-		<script type="text/javascript" src="d3.js"></script>
-		<script type="text/javascript" src="d3.layout.js"></script>
-		<script type="text/javascript" src="d3.geom.js"></script>
-		<script type="text/javascript" src="d3.behavior.js"></script>
+<script type="text/javascript" src="d3.js"></script>
+<script type="text/javascript" src="d3.layout.js"></script>
+<script type="text/javascript" src="d3.geom.js"></script>
+<script type="text/javascript" src="d3.behavior.js"></script>
 
-		<script type="text/javascript" src="forcegraph.js"></script>
+<script type="text/javascript" src="forcegraph.js"></script>
 
-		<link rel="stylesheet" type="text/css" href="forcegraphstyle.css" />
+<link rel="stylesheet" type="text/css" href="forcegraphstyle.css" />
 
 
-		<div id="container">
-			<h1>Napier University Visualisation</h1>
-			<h3>Connections between Napier University research staff, by paper co-authorships</h3>
+<div id="container">
+	<h1>Napier University Visualisation</h1>
+	<h3>Connections between Napier University research staff, by paper co-authorships</h3>
 
-			<p>
-				<select onchange="drawGraph(this.value)">
-					<option value="graph1">Linked by co-authored papers</option>
-					<option value="graph2">Linked by shared grants</option>
-				</select>
-			</p>
+	<p>
+		<select onchange="drawGraph(this.value)">
+			<option value="graph1">Linked by co-authored papers</option>
+			<option value="graph2">Linked by shared grants</option>
+		</select>
+	</p>
 
-			<div id="chart1">
-				<script>
-					forceGraph("people", "publications", "centre");
+	<div id="chart1">
+		<script>
+			forceGraph("people", "publications", "centre");
 
-					function drawGraph(choice) {
-						if (choice == "graph1") forceGraph("people", "publications", "centre");
-						if (choice == "graph2") forceGraph("people", "grants", "centre");
-					}
-				</script>
-			</div>
+			function drawGraph(choice) {
+				if (choice == "graph1") forceGraph("people", "publications", "centre");
+				if (choice == "graph2") forceGraph("people", "grants", "centre");
+			}
+		</script>
+	</div>
 
-			<p>
-				Each node is a member of staff who has authored at least one paper, and the
-				links represent the number of papers co-authored by each staff member.
-			</p>
+	<p>
+		Each node is a member of staff who has authored at least one paper, and the
+		links represent the number of papers co-authored by each staff member.
+	</p>
 
-			<p>
-				The sizes of the nodes vary with the total number of papers each author
-				has written, and the widths of the links vary with the number of papers
-				co-authored by each author-pair.
-			</p>
+	<p>
+		The sizes of the nodes vary with the total number of papers each author
+		has written, and the widths of the links vary with the number of papers
+		co-authored by each author-pair.
+	</p>
 
-			<p>
-				The colours correspond to the different research groups each author belongs to.
-			</p>
+	<p>
+		The colours correspond to the different research groups each author belongs to.
+	</p>
 
-			<p>
-				The data is loaded on runtime from a single JSON file, which specifies only
-				which papers each staff member is credited with, in the following format:
-				<pre>
-					<code>
+	<p>
+		The data is loaded on runtime from a single JSON file, which specifies only
+		which papers each staff member is credited with, in the following format:
+		<code>
 {
-  "people": {
-    "41": {
-      "name": "Jessie Kennedy",
-      "centre": "CISS",
-      "publications": [
-        "286105",
-        "286263",
-        "286267",
-        "286277"
-      ],
-      "grants": [
-        "13355681",
-        "13355659",
-        "13364427"
-      ]
-    },
-					</code>
-				</pre>
-				And the tool does the rest.
-			</p>
+"people": {
+"41": {
+  "name": "Jessie Kennedy",
+  "centre": "CISS",
+  "publications": [
+    "286105",
+    "286263",
+    "286267",
+    "286277"
+  ],
+  "grants": [
+    "13355681",
+    "13355659",
+    "13364427"
+  ]
+},
+			</code>
+		And the tool does the rest.
+	</p>
 
-			<p>
-				<a href='https://github.com/apmeehan/napier-visualisation'>View on GitHub</a>
-			</p>
-		</div>
+	<p>
+		<a href='https://github.com/apmeehan/napier-visualisation'>View on GitHub</a>
+	</p>
+</div>
