@@ -5,7 +5,8 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 		force,
 		node,
 		link,
-		
+		w = 80,
+		h = 60,
 		fill = d3.scale.category10(),
 		currentZoom = 1,
 		currentPan = [0, 0];
