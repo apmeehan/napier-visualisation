@@ -75,10 +75,10 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 
 	var vis = svg.append("svg:g");
 
-	svg.append("svg:rect")
+	/*svg.append("svg:rect")
 			.attr("width", w)
 			.attr("height", h)
-			.attr("fill", "white");
+			.attr("fill", "white");*/
 
 	// fade in vis
 	// note: very small values, when stringified, may be converted to scientific notation and cause
