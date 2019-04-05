@@ -4,26 +4,7 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="/napier-visualisation/assets/css/style.css?v=b5b717ebd3acf5ef80591b9b538b8caa9f3c6a9e">
-    <link rel="stylesheet" type="text/css" href="/napier-visualisation/assets/css/print.css" media="print">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-<!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>napier-visualisation | Visualisation of Napier University research staff network</title>
-<meta name="generator" content="Jekyll v3.7.4" />
-<meta property="og:title" content="napier-visualisation" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Visualisation of Napier University research staff network" />
-<meta property="og:description" content="Visualisation of Napier University research staff network" />
-<link rel="canonical" href="https://apmeehan.github.io/napier-visualisation/" />
-<meta property="og:url" content="https://apmeehan.github.io/napier-visualisation/" />
-<meta property="og:site_name" content="napier-visualisation" />
-<script type="application/ld+json">
-{"@type":"WebSite","url":"https://apmeehan.github.io/napier-visualisation/","headline":"napier-visualisation","name":"napier-visualisation","description":"Visualisation of Napier University research staff network","@context":"http://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
@@ -31,66 +12,66 @@
       <div class="inner">
 
         <header>
-          <h1>napier-visualisation</h1>
-          <h2>Visualisation of Napier University research staff network</h2>
+          <h1>University Staff Network</h1>
+          <h2>
+            A visualisation of Napier University research staff,
+            linked by papers they've co-written
+          </h2>
         </header>
         <section id="downloads" class="clearfix">
-
+          <p>
+          	<a href='https://github.com/apmeehan/napier-visualisation'>View on GitHub</a>
+          </p>
 
         </section>
-        <hr>
+
         <section id="main_content">
           <script type="text/javascript" src="d3.js"></script>
-<script type="text/javascript" src="d3.layout.js"></script>
-<script type="text/javascript" src="d3.geom.js"></script>
-<script type="text/javascript" src="d3.behavior.js"></script>
+          <script type="text/javascript" src="d3.layout.js"></script>
+          <script type="text/javascript" src="d3.geom.js"></script>
+          <script type="text/javascript" src="d3.behavior.js"></script>
 
-<script type="text/javascript" src="forcegraph.js"></script>
+          <script type="text/javascript" src="forcegraph.js"></script>
 
-<link rel="stylesheet" type="text/css" href="forcegraphstyle.css" />
+          <link rel="stylesheet" type="text/css" href="forcegraphstyle.css" />
 
-<p>
-	Force-directed graph of Napier University researchers, linked by co-authored
-	papers.
-</p>
+          <p>
+          	<select onchange="drawGraph(this.value)">
+          		<option value="graph1">Linked by co-authored papers</option>
+          		<option value="graph2">Linked by shared grants</option>
+          	</select>
+          </p>
 
-<p>
-	<select onchange="drawGraph(this.value)">
-		<option value="graph1">Linked by co-authored papers</option>
-		<option value="graph2">Linked by shared grants</option>
-	</select>
-</p>
+          <div id="chart1">
+          	<script>
+          		forceGraph("people", "publications", "centre");
 
-<div id="chart1">
-	<script>
-		forceGraph("people", "publications", "centre");
+          		function drawGraph(choice) {
+          			if (choice == "graph1") forceGraph("people", "publications", "centre");
+          			if (choice == "graph2") forceGraph("people", "grants", "centre");
+          		}
+          	</script>
+          </div>
 
-		function drawGraph(choice) {
-			if (choice == "graph1") forceGraph("people", "publications", "centre");
-			if (choice == "graph2") forceGraph("people", "grants", "centre");
-		}
-	</script>
-</div>
+          <p>
+          	Each node is a member of staff who has authored at least one paper, and the
+          	links represent the number of papers co-authored by each staff member.
+          </p>
 
-<p>
-	Each node is a member of staff who has authored at least one paper, and the
-	links represent the number of papers co-authored by each staff member.
-</p>
+          <p>
+          	The sizes of the nodes vary with the total number of papers each author
+          	has written, and the widths of the links vary with the number of papers
+          	co-authored by each author-pair.
+          </p>
 
-<p>
-	The sizes of the nodes vary with the total number of papers each author
-	has written, and the widths of the links vary with the number of papers
-	co-authored by each author-pair.
-</p>
+          <p>
+          	The colours correspond to the different research groups each author belongs to.
+          </p>
 
-<p>
-	The colours correspond to the different research groups each author belongs to.
-</p>
-
-<p>
-	The data is loaded on runtime from a single JSON file, which specifies only
-	which papers and grants are associated with each staff, in the following format:
-	<pre><code>{
+          <p>
+          	The data is loaded on runtime from a single JSON file, which specifies only
+          	which papers and grants are associated with each staff, in the following format:
+          	<pre><code>{
 "people": {
   "41": {
     "name": "Jessie Kennedy",
@@ -107,23 +88,17 @@
       "13364427"
     ]
   },</pre></code>
-</p>
+          </p>
 
-<p>
-	And the tool does the rest.</p>
-</p>
+          <p>
+          	And the tool does the rest.</p>
+          </p>
 
-<p>
-	<a href='https://github.com/apmeehan/napier-visualisation'>View on GitHub</a>
-</p>
 
         </section>
 
         <footer>
-
           napier-visualisation is maintained by <a href="https://github.com/apmeehan">apmeehan</a><br>
-
-          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
         </footer>
 
       </div>
