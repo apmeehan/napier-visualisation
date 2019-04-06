@@ -12,7 +12,7 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 		currentPan = [0, 0];
 
 
-	// CHEAT - need to generalise later by deriving this
+	// TODO: generalise later by deriving this
 	var nodeKeys = {
 		"people": ["centre", "publications", "grants"],
 		"publications": ["type", "people", "grants"],
@@ -39,7 +39,7 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 			{name: "Constant", scale: function () { return 1; }},
 			{name: "Scaled", scale: function (d) { return d.cnt / 60; }},
 		],
-		currentForceScaleIndex = 1;
+		currentForceScaleIndex = 0;
 
 	var charges = [-200, -80],
 		linkDistances = [40, 0];

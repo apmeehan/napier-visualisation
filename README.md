@@ -2,7 +2,7 @@
 
 This visualisation shows connections between research staff, based on papers they have co-written.
 
-Written in JavaScript, using the D3.js visualisation library.
+Written in JavaScript, using the [D3.js visualisation library](https://github.com/d3/d3).
 
 [Viewable here.](https://apmeehan.github.io/napier-visualisation/)
 
@@ -19,11 +19,6 @@ papers and grants are associated with each staff member, in the following format
         "286263",
         "286267",
         "286277"
-      ],
-      "grants": [
-        "13355681",
-        "13355659",
-        "13364427"
       ]
     },
 ~~~~

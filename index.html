@@ -1,58 +1,69 @@
----
-layout: default
----
 
-<script type="text/javascript" src="d3.js"></script>
-<script type="text/javascript" src="d3.layout.js"></script>
-<script type="text/javascript" src="d3.geom.js"></script>
-<script type="text/javascript" src="d3.behavior.js"></script>
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<script type="text/javascript" src="forcegraph.js"></script>
+    <script type="text/javascript" src="d3.js"></script>
+    <script type="text/javascript" src="d3.layout.js"></script>
+    <script type="text/javascript" src="d3.geom.js"></script>
+    <script type="text/javascript" src="d3.behavior.js"></script>
+    <script type="text/javascript" src="forcegraph.js"></script>
 
-<link rel="stylesheet" type="text/css" href="forcegraphstyle.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="forcegraphstyle.css" />
+  </head>
 
-<p>
-	Force-directed graph of Napier University researchers, linked by papers
-	they've co-written.
-</p>
+  <body>
 
-<p>
-	<select onchange="drawGraph(this.value)">
-		<option value="graph1">Linked by co-authored papers</option>
-		<option value="graph2">Linked by shared grants</option>
-	</select>
-</p>
+      <header>
+        <div class='inner'>
+          <a id="github-banner" href="https://github.com/apmeehan/napier-visualisation">View on GitHub</a>
 
-<div id="chart1">
-	<script>
-		forceGraph("people", "publications", "centre");
+          <h1>University Staff Network</h1>
+          <h2>
+            A visualisation of Napier University research staff,
+            linked by papers they've co-written
+          </h2>
+        </div>
+      </header>
 
-		function drawGraph(choice) {
-			if (choice == "graph1") forceGraph("people", "publications", "centre");
-			if (choice == "graph2") forceGraph("people", "grants", "centre");
-		}
-	</script>
-</div>
+      <div id="main_content">
+        <div class="inner">
 
-<p>
-	Each node is a member of staff who has authored at least one paper, and the
-	links represent the number of papers co-authored by each staff member.
-</p>
+          <div id="chart1" class="chart">
+          	<script>
+          		forceGraph("people", "publications", "centre");
 
-<p>
-	The sizes of the nodes vary with the total number of papers each author
-	has written, and the widths of the links vary with the number of papers
-	co-authored by each author-pair.
-</p>
+          		function drawGraph(choice) {
+          			if (choice == "graph1") forceGraph("people", "publications", "centre");
+          			if (choice == "graph2") forceGraph("people", "grants", "centre");
+          		}
+          	</script>
+          </div>
 
-<p>
-	The colours correspond to the different research groups each author belongs to.
-</p>
+          <h2>Key</h2>
+          <p>
+          	Each node is a member of staff who has authored at least one paper, and the
+          	links represent the number of papers co-authored by each staff member.
+          </p>
 
-<p>
-	The data is loaded on runtime from a single JSON file, which specifies only
-	which papers and grants are associated with each staff, in the following format:
-	<pre><code>{
+          <p>
+          	The sizes of the nodes vary with the total number of papers each author
+          	has written, and the widths of the links vary with the number of papers
+          	co-authored by each author-pair.
+          </p>
+
+          <p>
+          	The colours correspond to the different research groups each author belongs to.
+          </p>
+
+          <h2>Data</h2>
+          <p>
+          	The data is loaded on runtime from a single JSON file, which specifies only
+          	which papers and grants are associated with each staff, in the following format:
+          	<pre><code>{
 "people": {
   "41": {
     "name": "Jessie Kennedy",
@@ -62,19 +73,24 @@ layout: default
       "286263",
       "286267",
       "286277"
-    ],
-    "grants": [
-      "13355681",
-      "13355659",
-      "13364427"
     ]
   },</pre></code>
-</p>
+          </p>
 
-<p>
-	And the tool does the rest.</p>
-</p>
+          <p>
+          	And the tool does the rest.
+          </p>
 
-<p>
-	<a href='https://github.com/apmeehan/napier-visualisation'>View on GitHub</a>
-</p>
+        </div>
+      </div>
+
+      <footer>
+        <div class="inner">
+          Maintained by <a href="https://github.com/apmeehan">apmeehan</a>
+        </div>
+      </footer>
+
+
+
+  </body>
+</html>
