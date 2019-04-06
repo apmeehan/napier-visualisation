@@ -57,17 +57,6 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 	// remove previous chart
 	chart.selectAll("*").remove();
 
-	// add control buttons
-	chart.append("xhtml:button")
-		.text("Cycle node-radius scale")
-		.on("click", cycleRadiusScale);
-	chart.append("xhtml:button")
-		.text("Cycle link-width scale")
-		.on("click", cycleWidthScale);
-	chart.append("xhtml:button")
-		.text("Cycle link-force scale")
-		.on("click", cycleForceScale);
-
 	// create actual svg visualisation
 	var svg = chart.append("svg:svg")
 			.attr("width", w)
@@ -80,6 +69,17 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 			.attr("fill", "white");
 
 	var vis = svg.append("svg:g");
+
+	// add control buttons
+	chart.append("xhtml:button")
+		.text("Cycle node-radius scale")
+		.on("click", cycleRadiusScale);
+	chart.append("xhtml:button")
+		.text("Cycle link-width scale")
+		.on("click", cycleWidthScale);
+	chart.append("xhtml:button")
+		.text("Cycle link-force scale")
+		.on("click", cycleForceScale);
 
 	// fade in vis
 	// note: very small values, when stringified, may be converted to scientific notation and cause
