@@ -38,3 +38,14 @@ svg {
 .infopanel .heading, .heading1, .heading2, .infopanel .rightcol {
 	font-weight: bold;
 }
+
+button {
+  background-color: #d5000d;
+  font-size: 13px;
+  color: white;
+  padding: 15px 32px;
+	margin: 2px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
