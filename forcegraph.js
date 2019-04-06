@@ -21,6 +21,8 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 	var data;
 
 
+	var areLabelsPermanent = false;
+
 	var	radiusScales = [
 			{name: "Constant", scale: function () { return 5; }},
 			{name: "Logarithmic", scale: function (d) { return Math.pow(d.staffInfo[linkDataKey].length, 0.4) + 4; }},
@@ -71,6 +73,9 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 	var vis = svg.append("svg:g");
 
 	// add control buttons
+	chart.append("xhtml:button")
+		.text("Toggle permanent labels")
+		.on("click", togglePermanentLabels);
 	chart.append("xhtml:button")
 		.text("Change node-size scaling")
 		.on("click", cycleRadiusScale);
@@ -740,6 +745,27 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 			.transition()
 				.duration(3000)
 				.style("opacity", 1e-6);
+	}
+
+	function togglePermanentLabels() {
+		areLabelsPermanent = !areLabelsPermanent;
+
+		if (areLabelsPermanent) {
+			vis.selectAll(".nodetext")
+				.style("display", "block")
+				.transition()
+					.duration(500)
+					.style("opacity", 1);
+		} else {
+			vis.selectAll(".nodetext")
+						.transition()
+							.duration(1000)
+							.style("opacity", 1e-6)
+							.each("end", function () {
+								d3.select(this)
+									.style("display", "none");
+							});
+		}
 	}
 
 	function cycleRadiusScale() {
