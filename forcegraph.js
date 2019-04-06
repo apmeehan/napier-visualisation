@@ -336,27 +336,29 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 				.attr("class", "node")
 				.attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; })
 				.on("mouseover", function () {
-					d3.select(this).selectAll(".nodetext")
-						.style("display", "block")
-						.transition()
-							.duration(0)
-							.style("opacity", 1);
-
+					if (!areLabelsPermanent) {
+						d3.select(this).selectAll(".nodetext")
+							.style("display", "block")
+							.transition()
+								.duration(0)
+								.style("opacity", 1);
+					}
 					d3.select(this).selectAll(".circle")
 						.transition()
 							.duration(0)
 							.style("fill", function (d) { return d3.rgb(fill(d.staffInfo[nodeColourKey])).brighter(); });
 				})
 				.on("mouseout", function () {
-					d3.select(this).selectAll(".nodetext")
-						.transition()
-							.duration(1000)
-							.style("opacity", 1e-6)
-							.each("end", function () {
-								d3.select(this)
-									.style("display", "none");
-							});
-
+					if (!areLabelsPermanent) {
+						d3.select(this).selectAll(".nodetext")
+							.transition()
+								.duration(1000)
+								.style("opacity", 1e-6)
+								.each("end", function () {
+									d3.select(this)
+										.style("display", "none");
+								});
+					}
 					d3.select(this).selectAll(".circle")
 						.transition()
 							.duration(1000)
