@@ -32,14 +32,7 @@
       <div id="main_content">
         <div class="inner">
 
-          <p>
-          	<select onchange="drawGraph(this.value)">
-          		<option value="graph1">Linked by co-authored papers</option>
-          		<option value="graph2">Linked by shared grants</option>
-          	</select>
-          </p>
-
-          <div id="chart1">
+          <div id="chart1" class="chart">
           	<script>
           		forceGraph("people", "publications", "centre");
 
@@ -50,6 +43,7 @@
           	</script>
           </div>
 
+          <h2>Key</h2>
           <p>
           	Each node is a member of staff who has authored at least one paper, and the
           	links represent the number of papers co-authored by each staff member.
@@ -65,6 +59,7 @@
           	The colours correspond to the different research groups each author belongs to.
           </p>
 
+          <h2>Data</h2>
           <p>
           	The data is loaded on runtime from a single JSON file, which specifies only
           	which papers and grants are associated with each staff, in the following format:
@@ -83,8 +78,9 @@
           </p>
 
           <p>
-          	And the tool does the rest.<a href>test</a></p>
+          	And the tool does the rest.
           </p>
+
         </div>
       </div>
 
