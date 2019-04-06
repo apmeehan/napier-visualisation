@@ -23,21 +23,21 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 
 	var	radiusScales = [
 			{name: "Constant", scale: function () { return 5; }},
-			{name: "Scaled", scale: function (d) { return Math.pow(d.staffInfo[linkDataKey].length, 0.4) + 4; }},
-			{name: "Proportional", scale: function (d) { return 2 * Math.pow(d.staffInfo[linkDataKey].length + 2, 0.5); }}
+			{name: "Logarithmic", scale: function (d) { return Math.pow(d.staffInfo[linkDataKey].length, 0.4) + 4; }},
+			{name: "Linear", scale: function (d) { return 2 * Math.pow(d.staffInfo[linkDataKey].length + 2, 0.5); }}
 		],
 		currentRadiusScaleIndex = 1;
 
 	var	widthScales = [
 			{name: "Constant", scale: function () { return 1; }},
-			{name: "Scaled", scale: function (d) { return Math.pow(d.cnt, 0.8); }},
-			{name: "Proportional", scale: function (d) { return d.cnt; }}
+			{name: "Logarithmic", scale: function (d) { return Math.pow(d.cnt, 0.7); }},
+			{name: "Linear", scale: function (d) { return d.cnt; }}
 		],
 		currentWidthScaleIndex = 1;
 
 	var	forceScales = [
 			{name: "Constant", scale: function () { return 1; }},
-			{name: "Scaled", scale: function (d) { return d.cnt / 60; }},
+			{name: "Logarithmic", scale: function (d) { return d.cnt / 60; }},
 		],
 		currentForceScaleIndex = 0;
 
@@ -72,14 +72,11 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 
 	// add control buttons
 	chart.append("xhtml:button")
-		.text("Cycle node-radius scale")
+		.text("Change node-size scaling")
 		.on("click", cycleRadiusScale);
 	chart.append("xhtml:button")
-		.text("Cycle link-width scale")
+		.text("Change link-width scaling")
 		.on("click", cycleWidthScale);
-	chart.append("xhtml:button")
-		.text("Cycle link-force scale")
-		.on("click", cycleForceScale);
 
 	// fade in vis
 	// note: very small values, when stringified, may be converted to scientific notation and cause
