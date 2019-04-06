@@ -2,7 +2,7 @@
 
 This visualisation shows connections between research staff, based on papers they have co-written.
 
-Written in JavaScript, using the D3.js visualisation library.
+Written in JavaScript, using the [D3.js visualisation library](https://github.com/d3/d3).
 
 [Viewable here.](https://apmeehan.github.io/napier-visualisation/)
 
