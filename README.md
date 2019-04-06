@@ -19,11 +19,6 @@ papers and grants are associated with each staff member, in the following format
         "286263",
         "286267",
         "286277"
-      ],
-      "grants": [
-        "13355681",
-        "13355659",
-        "13364427"
       ]
     },
 ~~~~

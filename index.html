@@ -4,14 +4,21 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <script type="text/javascript" src="d3.js"></script>
+    <script type="text/javascript" src="d3.layout.js"></script>
+    <script type="text/javascript" src="d3.geom.js"></script>
+    <script type="text/javascript" src="d3.behavior.js"></script>
+    <script type="text/javascript" src="forcegraph.js"></script>
+
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="forcegraphstyle.css" />
   </head>
 
   <body>
-    <div id="container">
-      <div class="inner">
 
-        <header>
+      <header>
+        <div class='inner'>
           <a id="github-banner" href="https://github.com/apmeehan/napier-visualisation">View on GitHub</a>
 
           <h1>University Staff Network</h1>
@@ -19,17 +26,11 @@
             A visualisation of Napier University research staff,
             linked by papers they've co-written
           </h2>
-        </header>
+        </div>
+      </header>
 
-        <section id="main_content">
-          <script type="text/javascript" src="d3.js"></script>
-          <script type="text/javascript" src="d3.layout.js"></script>
-          <script type="text/javascript" src="d3.geom.js"></script>
-          <script type="text/javascript" src="d3.behavior.js"></script>
-
-          <script type="text/javascript" src="forcegraph.js"></script>
-
-          <link rel="stylesheet" type="text/css" href="forcegraphstyle.css" />
+      <div id="main_content">
+        <div class="inner">
 
           <p>
           	<select onchange="drawGraph(this.value)">
@@ -77,28 +78,22 @@
       "286263",
       "286267",
       "286277"
-    ],
-    "grants": [
-      "13355681",
-      "13355659",
-      "13364427"
     ]
   },</pre></code>
           </p>
 
           <p>
-          	And the tool does the rest.</p>
+          	And the tool does the rest.<a href>test</a></p>
           </p>
-
-
-        </section>
-
-        <footer>
-          napier-visualisation is maintained by <a href="https://github.com/apmeehan">apmeehan</a><br>
-        </footer>
-
+        </div>
       </div>
-    </div>
+
+      <footer>
+        <div class="inner">
+          Maintained by <a href="https://github.com/apmeehan">apmeehan</a>
+        </div>
+      </footer>
+
 
 
   </body>
