@@ -4,7 +4,7 @@ This visualisation shows connections between research staff, based on papers the
 
 Written in JavaScript, using the [D3.js visualisation library](https://github.com/d3/d3).
 
-[Viewable here.](https://apmeehan.github.io/napier-visualisation/)
+[Viewable here.](https://apmeehan.github.io/uni-staff-visualisation/)
 
 The data is loaded on runtime from a single JSON file, which specifies which
 papers and grants are associated with each staff member, in the following format:
