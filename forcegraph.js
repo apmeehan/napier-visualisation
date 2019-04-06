@@ -12,7 +12,7 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 		currentPan = [0, 0];
 
 
-	// CHEAT - need to generalise later by deriving this
+	// TODO: generalise later by deriving this
 	var nodeKeys = {
 		"people": ["centre", "publications", "grants"],
 		"publications": ["type", "people", "grants"],
