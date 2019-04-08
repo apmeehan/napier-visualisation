@@ -587,7 +587,7 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 				.attr("y", -18.5)
 				.attr("width", 140)
 				.attr("height", 12 * 7 + 18)
-				.style("fill", "#ffe")
+				.style("fill", "#fff")
 				.style("stroke", "#bbb");
 
 		infopanel_node.append("svg:line")
