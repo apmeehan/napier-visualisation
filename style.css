@@ -103,10 +103,6 @@ section {
     display: block
 }
 
-ol,
-ul {
-    list-style: none
-}
 
 blockquote,
 q {
@@ -263,6 +259,13 @@ p {
     margin-bottom: 20px;
 }
 
+ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+li {
+  margin-bottom: 5px;
+}
 
 .chart {
     margin-top: 25px;
