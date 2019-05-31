@@ -1,254 +1,107 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,900');
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-    padding: 0;
-    margin: 0;
-    font: inherit;
-    font-size: 100%;
-    vertical-align: baseline;
-    border: 0
-}
-
-
-blockquote,
-q {
-    quotes: none
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
-    content: none
-}
-
-table {
-    border-spacing: 0;
-    border-collapse: collapse
+html,body,div,h1,h2,h3,h4,h5,h6,p,a,ul,li,footer,header {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  border: 0;
 }
 
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 1em;
-    line-height: 1.5;
-    color: #6d6d6d;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 1);
-    background-color: #efefef
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+  color: #6d6d6d;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 1);
+  background-color: #efefef;
 }
 
 a {
-    color: #d5000d;
-    text-decoration: none;
+  color: #d5000d;
+  text-decoration: none;
 }
-a:hover,
-a:focus {
-    text-decoration: underline;
+
+a:hover,a:focus {
+  text-decoration: underline;
 }
 
 header {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    background-color: #292d34;
-    text-shadow: 0 0;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #292d34;
+  text-shadow: 0 0;
 }
 
 header h1 {
-    margin-bottom: 10px;
-    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 48px;
-    font-weight: 900;
-    line-height: 1.2;
-    color: #fff;
-    letter-spacing: -0.02em;
+  margin-bottom: 10px;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: #fff;
+  letter-spacing: -0.02em;
 }
 
 header h2 {
-    margin-bottom: 0;
-    font-size: 24px;
-    font-weight: normal;
-    line-height: 1.3;
-    color: #b7b6b6;
-    letter-spacing: -0.02em;
-    text-shadow: 0 0;
+  margin-bottom: 0;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 1.3;
+  color: #b7b6b6;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0;
 }
 
 #main_content {
-    padding-top: 25px;
-    padding-bottom: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 footer {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    font-size: 13px;
-    color: #b7b6b6;
-    text-shadow: 0 0;
-    background-color: #292d34;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-size: 13px;
+  color: #b7b6b6;
+  text-shadow: 0 0;
+  background-color: #292d34;
 }
 
 footer a {
-    color: #fff;
+  color: #fff;
 }
 
 .inner {
-    max-width: 620px;
-    margin: 0 auto
-}
-
-#github-banner {
-    padding: 10px;
-    color: #fff;
-    background-color: #d5000d;
-    font-weight: 700;
-    border-radius: 3px;
-}
-
-#container .inner img {
-    max-width: 100%
-}
-
-code,
-pre {
-    margin-bottom: 30px;
-    font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal;
-    font-size: 14px;
-    color: #222
-}
-
-code {
-    padding: 0 3px;
-    background-color: #f2f2f2;
-    border: solid 1px #ddd
-}
-
-pre {
-    padding: 20px;
-    overflow: auto;
-    color: #f2f2f2;
-    text-shadow: none;
-    background: #303030
-}
-
-pre code {
-    padding: 0;
-    color: #f2f2f2;
-    background-color: #303030;
-    border: none
-}
-
-strong {
-    font-weight: bold
-}
-
-em {
-    font-style: italic
+  max-width: 620px;
+  margin: 0 auto;
 }
 
 h1 {
-    font-size: 32px
+  font-size: 32px;
 }
 
 h2 {
-    margin-bottom: 8px;
-    font-size: 22px;
-    font-weight: bold;
-    color: #303030
+  margin-bottom: 8px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #303030;
 }
 
 p {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 ul {
   padding-left: 20px;
   margin-bottom: 20px;
 }
+
 li {
   margin-bottom: 5px;
 }
 
 .chart {
-    margin-top: 25px;
-    margin-bottom: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
