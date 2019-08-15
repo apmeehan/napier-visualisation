@@ -108,6 +108,8 @@ function forceGraph(nodeDataKey, linkDataKey, nodeColourKey) {
 					for (j = i + 1; j < pubs[e][nodeDataKey].length; j++)
 						addNewLinks(links, pubs[e][nodeDataKey][i], pubs[e][nodeDataKey][j]);
 
+		console.log(nodes);
+		console.log(links);
 		console.log("number of nodes: " + nodes.length + "\nnumber of links: " + links.length);
 		visualiseIt();
 	});
